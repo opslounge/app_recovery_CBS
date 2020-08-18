@@ -1,0 +1,18 @@
+- name: restore volume data from local protection group snapshot on secondary array 
+  hosts: 10.226.116.122
+  connection: local
+  collections:
+  - purestorage.flasharray
+  gather_facts: no
+
+  tasks:
+    - name:  restoring the volume from the protection group snapshot
+      purefa_pgsnap:
+        name: foobar
+        suffix: andysnapper
+        restore: andyscorevolume
+        target: andystestvolume
+        overwrite: true
+        fa_url: 10.226.116.122
+        api_token: 4ac5c338-a688-3c77-d6cb-dcfd3a5b2424
+        state: copy
