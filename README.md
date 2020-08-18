@@ -1,8 +1,13 @@
 
 
-# Active Directory Authentication for Flash Array
+# Kubernetes (k8's) application recovery to the cloud
 
-These Playbooks will help you setup Active Directory Authentication, and configure AD roles to manage Flash Array
+This repo contains the playbooks and instructions to setup an application recovery to a secondary 
+array using Flash Array async replication and ansible to restore an application running 
+inside a kubernetes cluster on-prem. to another kubernetes cluster running either in the cloud,
+or another secondary array.  
+
+
 
 
 ## Prerequisites
