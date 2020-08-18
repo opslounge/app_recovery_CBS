@@ -16,35 +16,37 @@ or another secondary array.
 steps to capture
 
 ## create protection group and add volume to it
-
-repl.yaml
-
+```
+ansible-playbook repl.yaml
+```
 ## create a pg snapshot
 
-pg.yaml
-
+```
+ansible-playbook pg.yaml
+```
 
 ## need to add the target manually at this time. 
 
+script this process as its manual atm. 
 
 ## deploy app on new site. 
-
+```
 ./make
-
+```
 ## spin down mysql
-
+```
 kubectl scale --current-replicas=1 --replicas=0 deployment/wordpress-mysql
-
+```
 
 ## restore the volume from pg snapshot
-
-pgrestore.yaml
-
+```
+ansible-playbook pgrestore.yaml
+```
 
 ## scale the app back up
-
+```
 kubectl scale --current-replicas=0 --replicas=1 deployment/wordpress-mysql
-
+```
 
 ## show app is now restored to new site. 
 
