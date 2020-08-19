@@ -1,4 +1,4 @@
-- name: restore volume data from local protection group snapshot on secondary array 
+- name: restore volume data from protection group snapshot
   hosts: 10.226.116.122
   connection: local
   collections:
@@ -6,10 +6,10 @@
   gather_facts: no
 
   tasks:
-    - name:  restoring the volume from the protection group snapshot
+    - name:  Restoring volume from the protection group snapshot with suffix app_recovery_CBS
       purefa_pgsnap:
         name: foobar
-        suffix: andysnapper
+        suffix: app_recovery_CBS
         restore: andyscorevolume
         target: andystestvolume
         overwrite: true

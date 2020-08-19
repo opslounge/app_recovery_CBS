@@ -1,4 +1,4 @@
-- name: Create a remote copy of a volume using it's protection group
+- name: Create a protection group
   hosts: 10.226.116.122
   connection: local
   collections:
@@ -6,7 +6,7 @@
   gather_facts: no
 
   tasks:
-    - name:  Create a replicated protection group
+    - name:  Creating protection group and connecting volume
       purefa_pg:
         pgroup: foobar
         volume: 

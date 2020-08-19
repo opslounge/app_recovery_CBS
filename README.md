@@ -8,8 +8,6 @@ inside a kubernetes cluster on-prem. to another kubernetes cluster running eithe
 or another secondary array.  
 
 
-
-
 ## Prerequisites
 
 
@@ -17,17 +15,18 @@ steps to capture
 
 ## create protection group and add volume to it
 ```
-ansible-playbook repl.yaml
+ansible-playbook pgroup.yaml
 ```
 ## create a pg snapshot
 
 ```
-ansible-playbook pg.yaml
+ansible-playbook pgsnap.yaml
 ```
 
-## need to add the target manually at this time. 
-
-script this process as its manual atm. 
+## add target for replication 
+```
+ansible-playbook target.yaml
+```
 
 ## deploy app on new site. 
 ```
