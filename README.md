@@ -27,6 +27,10 @@ ansible-playbook pgsnap.yaml
 ```
 ansible-playbook target.yaml
 ```
+## enable replication of volume
+```
+ansible-playbook enablerepl.yaml
+```
 
 ## deploy app on new site. 
 ```
