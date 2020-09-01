@@ -1,15 +1,17 @@
 - name: Create a protection group snapshot
-  hosts: 10.226.116.122
+  hosts: primaryarray
   connection: local
   collections:
   - purestorage.flasharray
   gather_facts: no
 
+
+
   tasks:
     - name:  Creating a protection group snapshot with suffix app_recovery_CBS
       purefa_pgsnap:
-        name: apprecoveryCBS
-        suffix: apprecoveryCBS
-        fa_url: 10.226.116.122
-        api_token: 4ac5c338-a688-3c77-d6cb-dcfd3a5b2424
+        name: "{{ group }}"
+        suffix: "{{ suff }}"
+        fa_url: "{{ primary_array }}"
+        api_token: "{{ primary_array_token }}"
         state: present

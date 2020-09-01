@@ -1,16 +1,21 @@
+
 [flasharray]
-10.226.224.130
-10.226.224.120
 10.226.116.122
-10.226.224.110
+10.226.224.112
 
-[flashblade]
-10.226.224.180
+[primarysite]
+10.226.226.30
 
+[primaryarray]
+10.226.116.122
 
-[local]
-10.226.116.120
+[drsite]
+10.226.226.33
+
+[drarray]
+10.226.224.112
 
 [all:vars]
-ansible_user=pureuser
-ansible_password=pureuser
+sudo_user=pureuser
+sudo_password=pureuser
+ansible_python_interpreter=/usr/bin/python3

@@ -1,15 +1,15 @@
 - name: add target array
-  hosts: 10.226.116.122
+  hosts: primaryarray
   connection: local
   collections:
   - purestorage.flasharray
   gather_facts: no
-
+  
   tasks:
     - name: Connecting target array RedDotX to protection group 
       purefa_pg:
-        pgroup: apprecoveryCBS
+        pgroup: "{{ group }}"
         target: 
-          - RedDotX
-        fa_url: 10.226.116.122
-        api_token: 4ac5c338-a688-3c77-d6cb-dcfd3a5b2424
+          - "{{ target }}"
+        fa_url: "{{ primary_array }}"
+        api_token: "{{ primary_array_token }}"
