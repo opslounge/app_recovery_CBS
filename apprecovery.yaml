@@ -1,0 +1,4 @@
+- import_playbook: pgroup.yaml
+- import_playbook: pgsnap.yaml
+- import_playbook: target.yaml
+- import_playbook: enablerepl.yaml
